@@ -14,7 +14,7 @@ if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
             $_SESSION['errors'] = $errors;
             $_SESSION['old'] = $request;
 
-            header('Location: ../../pages/books/edit.php');
+            header('Location: ../../pages/books/edit.php?id=' . urlencode($request['id']));
             exit;
 
         }
@@ -32,7 +32,7 @@ if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
             'isbn' => $request['isbn'],
             'year' => $request['year'],
             'stock' => $request['stock'],
-            'category_id' => $request['category_ids'],
+            'category_id' => $request['category_id'],
             'description' => $request['description'],
             'id' => $request['id']
         ]);

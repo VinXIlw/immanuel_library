@@ -46,7 +46,7 @@ function getBook($id)
   $book = $stmt->fetch();
 
   if(!$book) {
-  header("Location: .. /books/index.php");
+  header("Location: ../books/index.php");
   exit;
 }
 
