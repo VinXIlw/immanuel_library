@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../../repositories/book-repository.php";
-require_once __DIR__ . "/../../config/database.php";
-
+require_once __DIR__ . "/../../middleware/auth.php";
+requireRole(['admin', 'member']);
 $books = getBooks();
 
 $pageTitle = "Manajemen Buku";
@@ -75,7 +75,7 @@ $pageSubtitle = "Kelola data buku, kategori, dan penulis";
                   <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
                   <td>
                     <div class="chip-list">
-                      <?php foreach ($book['authors'] as $author): ?> 
+                      <?php foreach ($book['authors'] as $author): ?>
                         <span class="chip">
                           <?= $author ?>
                         </span>
