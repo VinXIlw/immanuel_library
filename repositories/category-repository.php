@@ -6,10 +6,10 @@ function getCategories()
   global $pdo;
 
   $query = "select * from categories";
-  $stnt = $pdo->prepare($query);
-  $stnt->execute();
+  $stmt = $pdo->prepare($query);
+  $stmt->execute();
 
-  $categories = $stnt->fetchAll();
+  $categories = $stmt->fetchAll();
 
   return $categories;
 }

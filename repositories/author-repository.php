@@ -5,11 +5,11 @@ function getAuthors()
   global $pdo;
 
   $query = "select id, name from authors";
-  $stnt = $pdo->prepare($query);
-  $stnt->execute();
+  $stmt = $pdo->prepare($query);
+  $stmt->execute();
   
 
-  $authors = $stnt->fetchAll();
+  $authors = $stmt->fetchAll();
 
   return $authors;
 }
